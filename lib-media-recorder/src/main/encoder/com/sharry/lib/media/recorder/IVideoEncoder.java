@@ -57,8 +57,8 @@ public interface IVideoEncoder {
 
         public Context(int frameWidth, int frameHeight, int frameRate, int textureId,
                        EGLContext eglContext, Callback callback) {
-            this.frameWidth = frameWidth;
-            this.frameHeight = frameHeight;
+            this.frameWidth = (frameWidth & 1) == 1 ? (frameWidth - 1) : frameWidth;
+            this.frameHeight = (frameHeight & 1) == 1 ? (frameHeight - 1) : frameHeight;
             this.frameRate = frameRate;
             this.textureId = textureId;
             this.eglContext = eglContext;
