@@ -90,7 +90,7 @@ public class TakerActivity extends AppCompatActivity implements
         if (mVideoPlayer.getVisibility() == View.VISIBLE) {
             mVideoPlayer.resume();
         } else {
-            mVideoPlayer.stopPlayback();
+            mVideoPlayer.suspend();
         }
         if (mCameraView.getVisibility() == View.VISIBLE) {
             mCameraView.startPreview();
@@ -180,7 +180,7 @@ public class TakerActivity extends AppCompatActivity implements
 
     @Override
     public void stopVideoPlayer() {
-        mVideoPlayer.stopPlayback();
+        mVideoPlayer.suspend();
     }
 
     @Override
